@@ -1,5 +1,4 @@
 # Observatorio-Climatico-Recife
-
 ## Sobre o projeto
 
 O Observatório Climático Local é um projeto acadêmico que realiza a coleta, o tratamento, o armazenamento e a análise de dados meteorológicos históricos do município do Recife, Pernambuco.
