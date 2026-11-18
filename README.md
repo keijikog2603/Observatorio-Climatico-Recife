@@ -1,5 +1,4 @@
 # Observatorio-Climatico-Recife
-# Observatório Climático Local — Recife
 
 ## Sobre o projeto
 
