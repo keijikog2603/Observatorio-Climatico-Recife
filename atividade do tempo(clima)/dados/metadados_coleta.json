@@ -1,0 +1,16 @@
+{
+    "cidade": "Recife",
+    "estado": "Pernambuco",
+    "latitude": -8.0476,
+    "longitude": -34.877,
+    "data_inicial": "2022-05-25",
+    "data_final": "2022-06-23",
+    "fuso_horario": "America/Recife",
+    "data_hora_coleta": "2026-11-17 17:02:26.916534-03:00",
+    "variaveis": [
+        "temperatura_maxima",
+        "temperatura_minima",
+        "precipitacao"
+    ],
+    "fonte": "Open-Meteo Historical Weather API"
+}
