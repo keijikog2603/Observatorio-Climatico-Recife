@@ -1,9 +1,9 @@
 # Observatorio-Climatico-Recife
 ## Sobre o projeto
 
-O Observatório Climático Local é um projeto acadêmico que realiza a coleta, o tratamento, o armazenamento e a análise de dados meteorológicos históricos do município do Recife, Pernambuco.
+  O Observatório Climático Local é um projeto acadêmico que realiza a coleta, o tratamento, o armazenamento e a análise de dados meteorológicos históricos do município do Recife, Pernambuco.
 
-O objetivo é identificar padrões de precipitação e variações de temperatura, transformando dados meteorológicos em informações organizadas que possam contribuir para a compreensão dos períodos de chuvas intensas na região.
+  O objetivo é identificar padrões de precipitação e variações de temperatura, transformando dados meteorológicos em informações organizadas que possam contribuir para a compreensão dos períodos de chuvas intensas na região.
 
 **Público-alvo:**
 - Moradores do Recife, especialmente de regiões afetadas por chuvas intensas.
@@ -12,7 +12,7 @@ O objetivo é identificar padrões de precipitação e variações de temperatur
 
 ## Fonte dos dados
 
-Os dados são obtidos por meio da API histórica Open-Meteo.
+  Os dados são obtidos por meio da API histórica Open-Meteo.
 
 Fonte: https://open-meteo.com/
 
@@ -46,7 +46,7 @@ Fonte: https://open-meteo.com/
 
 ## Preparação do ambiente
 
-É necessário ter o Python instalado.
+  É necessário ter o Python instalado.
 
 Instale as dependências com:
 
@@ -54,7 +54,7 @@ Instale as dependências com:
 pip install -r requirements.txt
 ```
 
-As principais bibliotecas utilizadas são:
+  As principais bibliotecas utilizadas são:
 
 - requests
 - pandas
@@ -62,7 +62,7 @@ As principais bibliotecas utilizadas são:
 
 ## Ordem de execução
 
-Execute os arquivos na seguinte ordem:
+  Execute os arquivos na seguinte ordem:
 
 **1. Coleta dos dados**
 
@@ -70,7 +70,7 @@ Execute os arquivos na seguinte ordem:
 python coleta.py
 ```
 
-Esse programa acessa a API Open-Meteo, coleta os dados meteorológicos e gera os arquivos JSON e CSV na pasta `dados/`.
+  Esse programa acessa a API Open-Meteo, coleta os dados meteorológicos e gera os arquivos JSON e CSV na pasta `dados/`.
 
 **2. Tratamento e armazenamento**
 
@@ -78,7 +78,7 @@ Esse programa acessa a API Open-Meteo, coleta os dados meteorológicos e gera os
 python banco.py
 ```
 
-Esse programa realiza o tratamento e a validação dos dados e os armazena no banco DuckDB.
+  Esse programa realiza o tratamento e a validação dos dados e os armazena no banco DuckDB.
 
 **3. Execução das consultas SQL**
 
@@ -86,13 +86,13 @@ Esse programa realiza o tratamento e a validação dos dados e os armazena no ba
 python -c "import duckdb; c=duckdb.connect('dados/observatorio_climatico.duckdb'); c.execute(open('consultas.sql', encoding='utf-8').read()); c.close(); print('Consultas executadas!')"
 ```
 
-As consultas geram arquivos com os resultados das análises.
+  As consultas geram arquivos com os resultados das análises.
 
 ## Banco de dados
 
-O projeto utiliza o DuckDB para armazenar os registros meteorológicos.
+  O projeto utiliza o DuckDB para armazenar os registros meteorológicos.
 
-A tabela principal é chamada `dados_climaticos` e possui os seguintes campos:
+  A tabela principal é chamada `dados_climaticos` e possui os seguintes campos:
 
 | Campo | Descrição |
 |---|---|
@@ -101,11 +101,11 @@ A tabela principal é chamada `dados_climaticos` e possui os seguintes campos:
 | temperatura_minima | Temperatura mínima diária |
 | precipitacao | Precipitação diária acumulada |
 
-A coluna `data` funciona como chave primária para evitar registros duplicados durante novas execuções.
+  A coluna `data` funciona como chave primária para evitar registros duplicados durante novas execuções.
 
 ## Resultados principais
 
-Durante os 30 dias analisados, foram encontrados:
+  Durante os 30 dias analisados, foram encontrados:
 
 - Precipitação total: 521,5 mm.
 - Dias com chuva: 28.
@@ -117,14 +117,14 @@ Durante os 30 dias analisados, foram encontrados:
 
 ## Limitações
 
-A análise considera somente 30 dias consecutivos e três variáveis meteorológicas.
+  A análise considera somente 30 dias consecutivos e três variáveis meteorológicas.
 
-Os dados históricos da Open-Meteo podem ser provenientes de modelos meteorológicos e reanálises, não representando necessariamente medições diretas de uma estação meteorológica local.
+  Os dados históricos da Open-Meteo podem ser provenientes de modelos meteorológicos e reanálises, não representando necessariamente medições diretas de uma estação meteorológica local.
 
-Os resultados possuem finalidade histórica e informativa. Não constituem previsão meteorológica nem sistema de alerta de enchentes.
+  Os resultados possuem finalidade histórica e informativa. Não constituem previsão meteorológica nem sistema de alerta de enchentes.
 
 ## Relatório
 
-O relatório técnico e analítico da AE2 apresenta o processo de coleta, tratamento, armazenamento, consultas SQL, indicadores e interpretação dos resultados.
+  O relatório técnico e analítico da AE2 apresenta o processo de coleta, tratamento, armazenamento, consultas SQL, indicadores e interpretação dos resultados.
 
-O documento está disponível neste repositório.
+  O documento está disponível neste repositório.
